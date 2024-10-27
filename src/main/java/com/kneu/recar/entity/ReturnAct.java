@@ -14,6 +14,7 @@ import lombok.Setter;
 public class ReturnAct {
     private Long id;
     private Order order;
+    private Administrator administrator;
     private String returnDate;
     private String damages;
     private boolean hasDamages;
