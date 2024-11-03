@@ -1,16 +1,19 @@
 package com.kneu.recar.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Data
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
+@Table(name = "clients")
 public class Client {
+
+    @Id
     private Long id;
     private String firstName;
     private String lastName;

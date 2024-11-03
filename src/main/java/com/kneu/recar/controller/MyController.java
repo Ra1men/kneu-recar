@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 
 @RestController
 public class MyController {
-    @GetMapping("/clients")
+    @GetMapping("/clientss")
 
     public Flux<Client> getClients() {
         Flux<Client> clients = Flux.just(

@@ -20,7 +20,7 @@ public class GreetingRouter {
         return RouterFunctions
 
                 .route(RequestPredicates.GET("/hello").and(accept(MediaType.APPLICATION_JSON)), greetingHandler::hello)
-                .andRoute(RequestPredicates.GET("/"), greetingHandler::home)
-                .andRoute(RequestPredicates.GET("/users"), greetingHandler::getClients);
+                .andRoute(RequestPredicates.GET("/"), greetingHandler::home);
+//                .andRoute(RequestPredicates.GET("/users"), greetingHandler::getClients);
     }
 }

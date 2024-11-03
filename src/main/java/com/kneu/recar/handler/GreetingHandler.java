@@ -25,23 +25,23 @@ public class GreetingHandler {
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(BodyInserters.fromValue("Main page!"));
     }
-
-    public Mono<ServerResponse> getClients(ServerRequest request) {
-        String start = request
-                .queryParam("start")
-                .orElse("0");
-
-        Flux<Client> clients = Flux.just(
-                new Client(1L, "Ihor", "Stefanishyn", 26, "67-753-45-84", "ihor.stef@gmail.com", "649139652"),
-                new Client(2L, "Olha", "Sytnyk", 32, "68-125-77-96", "olha.syt@gmail.com", "6343677895"),
-                new Client(3L, "Sergey", "Kovalev", 27,"93-763-23-56", "sergey.kov@gmail.com", "EP153567")
-                )
-                    .skip(Long.valueOf(start))
-                    .take(3);
-
-        return ServerResponse
-                .ok()
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(clients, Client.class);
-    }
+//
+//    public Mono<ServerResponse> getClients(ServerRequest request) {
+//        String start = request
+//                .queryParam("start")
+//                .orElse("0");
+//
+//        Flux<Client> clients = Flux.just(
+//                new Client(1L, "Ihor", "Stefanishyn", 26, "67-753-45-84", "ihor.stef@gmail.com", "649139652"),
+//                new Client(2L, "Olha", "Sytnyk", 32, "68-125-77-96", "olha.syt@gmail.com", "6343677895"),
+//                new Client(3L, "Sergey", "Kovalev", 27,"93-763-23-56", "sergey.kov@gmail.com", "EP153567")
+//                )
+//                    .skip(Long.valueOf(start))
+//                    .take(3);
+//
+//        return ServerResponse
+//                .ok()
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .body(clients, Client.class);
+//    }
 }
