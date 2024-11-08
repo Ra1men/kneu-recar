@@ -28,7 +28,6 @@ public class CarController {
         return carService.findCarById(id)
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
-
     }
 
     @PostMapping("/create")
